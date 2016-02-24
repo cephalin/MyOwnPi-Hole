@@ -17,7 +17,7 @@
     "location": "[resourceGroup().location]",
     "subnet1Name": "default",
     "subnet1Prefix": "10.0.0.0/24",
-    "newStorageAccountName": "[toLower(replace(resourceGroup().name, '-', ''))]",
+    "newStorageAccountName": "[concat('storage', uniqueString(resourceGroup().name))]",
     "vmStorageAccountContainerName": "vhds",
     "publicIPAddressType": "Dynamic",
     "storageAccountType": "Standard_LRS",
@@ -37,7 +37,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[variables('newStorageAccountName')]",
-      "apiVersion": "2015-05-01-preview",
+      "apiVersion": "2015-06-15",
       "location": "[variables('location')]",
       "properties": {
         "accountType": "[variables('storageAccountType')]"
