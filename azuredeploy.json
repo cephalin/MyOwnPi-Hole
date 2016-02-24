@@ -17,6 +17,7 @@
     "location": "[resourceGroup().location]",
     "subnet1Name": "default",
     "subnet1Prefix": "10.0.0.0/24",
+    "newStorageAccountName": "[replace(resourceGroup().id, '-', '')]",
     "vmStorageAccountContainerName": "vhds",
     "publicIPAddressType": "Dynamic",
     "storageAccountType": "Standard_LRS",
@@ -30,8 +31,7 @@
     "vmName": "myLinuxVM",
     "publicIPAddressName": "myPublicIP",
     "nicName": "myNIC",
-    "nsgName": "myNSG",
-    "newStorageAccountName": "[resourceGroup().id]"
+    "nsgName": "myNSG"
   },
   "resources": [
     {
